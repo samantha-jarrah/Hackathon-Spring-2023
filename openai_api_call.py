@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = ""
 
 completionHistory = openai.ChatCompletion.create(
     model = "gpt-3.5-turbo",
