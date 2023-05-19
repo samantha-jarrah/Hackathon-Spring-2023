@@ -5,8 +5,10 @@
     <h1>What type of worksheet do you need?</h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
+
         <p>
           <div class="mb-3">
+
             <label for="grade_level" class="form-label">Grade Level:</label>
             <select class="form-select" name="grade_level" id="grade_level">
               <option value="1st Grade">1st Grade</option>
@@ -16,6 +18,7 @@
               <option value="5th Grade">5th Grade</option>
               <option value="6th Grade">6th Grade</option>
             </select>
+
           </div>
         </p>
 
@@ -71,6 +74,7 @@
         </p>
         
           <button type="submit" class="btn btn-primary">Generate Worksheet</button>
+
     </form>
 {% endblock %}
 
