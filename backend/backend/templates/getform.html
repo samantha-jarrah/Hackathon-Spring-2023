@@ -18,7 +18,8 @@
             </select>
           </div>
         </p>
-        
+
+        <p>
           <div class="mb-3">
             <label for="english_ability" class="form-label">English Ability:</label>
             <select class="form-select" name="english_ability" id="english_ability">
@@ -28,13 +29,17 @@
               <option value="Very advanced">Very advanced</option>
             </select>
           </div>
+        </p>
 
+        <p>
           <div class="mb-3">
             <label for="vocabulary" class="form-label">Vocabulary Words:</label>
             <input type="text" name="vocabulary" id="vocabulary" class="form-control" required>
             <small class="form-text text-muted">Enter the vocabulary words separated by commas</small>
           </div>
+        </p>
 
+        <p>
           <div class="mb-3">
             <label class="form-label">Question Types:</label>
             <div class="form-check">
@@ -63,8 +68,9 @@
             </div>
             <!-- Add more checkboxes if needed -->
           </div>
-
-        <p>{{ form.submit() }}</p>
+        </p>
+        
+          <button type="submit" class="btn btn-primary">Generate Worksheet</button>
     </form>
 {% endblock %}
 
