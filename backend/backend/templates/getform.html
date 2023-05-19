@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>What type of worksheet do you need?</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>{{ form.grade_level.label }} {{ form.grade_level() }}</p>
+        <p>{{ form.english_ability.label }} {{ form.english_ability() }}</p>
+        <p>
+            {{ form.vocabulary_words.label }}<br>
+            {{ form.vocabulary_words(size=32) }}
+        </p>
+        <p>{{ form.fill_in_the_blank() }} {{ form.fill_in_the_blank.label }}</p>
+        <p>{{ form.definition_matching() }} {{ form.definition_matching.label }}</p>
+        <p>{{ form.synonym() }} {{ form.synonym.label }}</p>
+        <p>{{ form.antonym() }} {{ form.antonym.label }}</p>
+        <p>{{ form.fill_in_the_letters() }} {{ form.fill_in_the_letters.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }}</title>
+      {% else %}
+      <title>HomePage</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Home: <a href="/index">Home</a></div>
+        <div>Get Form: <a href="/getform">GetForm</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
