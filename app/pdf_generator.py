@@ -21,7 +21,6 @@ class PDF(FPDF):
     def generate_pdf(self, output):
         self.add_page()
         self.chapter_body(output)
-
         self.output('output.pdf')
 
 
