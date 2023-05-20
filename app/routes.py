@@ -12,6 +12,7 @@ openai.api_key = api_key
 pdf_directory = os.path.join(app.root_path, 'pdfs')
 os.makedirs(pdf_directory, exist_ok=True)
 
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -45,14 +46,11 @@ def getform():
         pdf.set_title('Vocabulary Worksheet')
         pdf.add_page()
         pdf.chapter_body(ai_response)
-        # pdf.generate_pdf(ai_response)
 
         pdf_path = os.path.join(pdf_directory, 'output.pdf')
         pdf.output(pdf_path)
-        return send_from_directory(directory=pdf_directory, path='output.pdf', as_attachment=True)
-        # return send_from_directory(directory=pdf_directory, path='output_page.html', output=ai_response)
-
-        # flash('Vocabulary exercises generated successfully!', 'success')
-        # return redirect('/index')
+        return send_from_directory(directory=pdf_directory,
+                                   path='output.pdf', as_attachment=True)
+        # return render_template('output_page.html', title='Output Page')
 
     return render_template('getform.html', title='Get Form', form=form)

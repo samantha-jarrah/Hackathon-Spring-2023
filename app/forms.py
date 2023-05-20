@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired
 
 
 class AppForm(FlaskForm):
-    # multiple_choice = BooleanField('Multiple Choice')
+    multiple_choice = BooleanField('Multiple Choice')
     fill_in_the_blank = BooleanField('Fill in the Blank')
     definition_matching = BooleanField('Definition Matching')
     synonym = BooleanField('Synonym')
@@ -31,10 +31,10 @@ class AppForm(FlaskForm):
             question_types.append('Fill in the Blank')
         if self.definition_matching.data:
             question_types.append('Definition Matching')
+        if self.multiple_choice.data:
+            question_types.append('Multiple Choice')
         if self.synonym.data:
             question_types.append('Synonym')
         if self.antonym.data:
             question_types.append('Antonym')
-        if self.fill_in_the_letters.data:
-            question_types.append('Fill in the Letters Spelling')
         return question_types
