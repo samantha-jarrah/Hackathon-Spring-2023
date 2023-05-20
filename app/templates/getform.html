@@ -9,6 +9,7 @@
 <style>
   .page-content {
     margin-left: 20px;
+    margin-right: 20px;
   }
 </style>
 
@@ -32,7 +33,7 @@
     <!-- Vocabulary Words -->
     <div class="form-group">
       {{ form.vocabulary_words.label(class="form-label") }} {{
-      form.vocabulary_words(class="form-control") }}
+      form.vocabulary_words(class="form-control", required=True) }}
       <small class="form-text text-muted"
         >Enter the vocabulary words separated by commas</small
       >

@@ -12,7 +12,7 @@ class AppForm(FlaskForm):
     fill_in_the_letters = BooleanField('Fill in the Letters Spelling')
     submit = SubmitField('Get WorkSheet')
     vocabulary_words = StringField(
-        'Vocabulary Words', validators=[DataRequired()])
+        'Vocabulary List', validators=[DataRequired()])
     grade_level = SelectField('Grade Level', choices=[
         ('1', '1st Grade'),
         ('2', '2nd Grade'),
@@ -21,7 +21,7 @@ class AppForm(FlaskForm):
         ('5', '5th Grade'),
         ('6', '6th Grade')
     ])
-    english_ability = SelectField('Select English Ability', choices=[(
+    english_ability = SelectField('English Ability', choices=[(
         '1', 'Beginner'), ('2', 'Intermediate'), ('3', 'Advanced')])
     remember_me = BooleanField('Remember Me')
 
