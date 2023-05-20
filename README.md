@@ -26,7 +26,8 @@ Utilizing the OpenAI API, this application generates a vocabulary worksheet base
     - OpenAI API
 - Frontend
     - Bootstrap
-    - AWS (deployment)
+    - HTML
+    - Heroku (deployment)
 
 ## Demo
 
