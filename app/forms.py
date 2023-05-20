@@ -24,3 +24,17 @@ class AppForm(FlaskForm):
     english_ability = SelectField('Select English Ability', choices=[(
         '1', 'Beginner'), ('2', 'Intermediate'), ('3', 'Advanced')])
     remember_me = BooleanField('Remember Me')
+
+    def get_question_types(self):
+        question_types = []
+        if self.fill_in_the_blank.data:
+            question_types.append('Fill in the Blank')
+        if self.definition_matching.data:
+            question_types.append('Definition Matching')
+        if self.synonym.data:
+            question_types.append('Synonym')
+        if self.antonym.data:
+            question_types.append('Antonym')
+        if self.fill_in_the_letters.data:
+            question_types.append('Fill in the Letters Spelling')
+        return question_types
