@@ -13,9 +13,7 @@ openai.api_key = api_key
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'username': 'Emily'}
-    alist = [1, 2]
-    return render_template('index.html', title='Hackathon 2023', user=user, alist=alist)
+    return render_template('index.html')
 
 
 @app.route('/getform', methods=['GET', 'POST'])

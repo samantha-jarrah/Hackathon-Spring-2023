@@ -12,7 +12,7 @@
   }
 </style>
 
-<div class="page-content">
+<div class="page-content bg-light text-dark">
   <h1>What type of worksheet do you need?</h1>
   <form action="{{ url_for('getform') }}" method="post" novalidate>
     {{ form.csrf_token }} {{ form.hidden_tag() }}
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Generate Worksheet</button>
+    <button type="submit" class="btn btn-primary">Generate and Download</button>
   </form>
 </div>
 {% endblock %}
