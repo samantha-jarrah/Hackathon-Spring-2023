@@ -1,8 +1,10 @@
 from flask import render_template, flash, redirect, request
 from app import app
 from app.forms import AppForm
+from app.pdf_generator import PDF
 import openai
 import os
+
 
 api_key = os.environ.get("OPENAI_API_KEY")
 openai.api_key = api_key
@@ -29,16 +31,23 @@ def getform():
         # Make an API call to OpenAI using the form inputs
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
-            temperature=0.5,
+            temperature=0.8,
             max_tokens=2000,
             messages=[
-                {"role": "user", "content": f"Write multiple English Language exercises for students in the {grade_level} with {english_ability} English ability. It should include exercises in the following formats: {question_types}. The vocab list is: {vocabulary}"},
+                {"role": "user", "content": f"Write English Language exercises for students in the {grade_level} with {english_ability} English ability. It should include exercises in the following formats: {question_types}. The vocab list is: {vocabulary}. Please include a word bank of the vocabulary words before each set of questions. Also, please randomize the order that the vocabulary answers appear in the activity and only include one set of questions per question format type."},
                 {"role": "system", "content": "You are an English Language teacher that creates engaging English Language exercises for your students."}
             ]
         )
 
-        output = f"\n{completion.choices[0].message.content}"
-        return render_template('output_page.html', output=output)
+        ai_response = f"\n{completion.choices[0].message.content}"
+
+        pdf = PDF()
+        pdf.set_title('Vocabulary Worksheet')
+        pdf.add_page()
+        pdf.chapter_body(ai_response)
+        pdf.generate_pdf(ai_response)
+
+        return render_template('output_page.html', output=ai_response)
 
         # flash('Vocabulary exercises generated successfully!', 'success')
         # return redirect('/index')
