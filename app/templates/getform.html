@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <h1>What type of worksheet do you need?</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+
+        <p>
+          <div class="mb-3">
+
+            <label for="grade_level" class="form-label">Grade Level:</label>
+            <select class="form-select" name="grade_level" id="grade_level">
+              <option value="1st Grade">1st Grade</option>
+              <option value="2nd Grade">2nd Grade</option>
+              <option value="3rd Grade">3rd Grade</option>
+              <option value="4th Grade">4th Grade</option>
+              <option value="5th Grade">5th Grade</option>
+              <option value="6th Grade">6th Grade</option>
+            </select>
+
+          </div>
+        </p>
+
+        <p>
+          <div class="mb-3">
+            <label for="english_ability" class="form-label">English Ability:</label>
+            <select class="form-select" name="english_ability" id="english_ability">
+              <option value="Low-level">Low-level</option>
+              <option value="Mid-level">Mid-level</option>
+              <option value="Advanced">Advanced</option>
+              <option value="Very advanced">Very advanced</option>
+            </select>
+          </div>
+        </p>
+
+        <p>
+          <div class="mb-3">
+            <label for="vocabulary" class="form-label">Vocabulary Words:</label>
+            <input type="text" name="vocabulary" id="vocabulary" class="form-control" required>
+            <small class="form-text text-muted">Enter the vocabulary words separated by commas</small>
+          </div>
+        </p>
+
+        <p>
+          <div class="mb-3">
+            <label class="form-label">Question Types:</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="question_types[]" id="multiple_choice" value="Multiple choice">
+              <label class="form-check-label" for="multiple_choice">Multiple choice</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="question_types[]" id="fill_in_the_blank" value="Fill in the blank">
+              <label class="form-check-label" for="fill_in_the_blank">Fill in the blank</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="question_types[]" id="definition_matching" value="Definition matching">
+              <label class="form-check-label" for="definition_matching">Definition matching</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="question_types[]" id="synonym" value="Synonym">
+              <label class="form-check-label" for="synonym">Synonym</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="question_types[]" id="antonym" value="Antonym">
+              <label class="form-check-label" for="antonym">Antonym</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="question_types[]" id="fill_in_the_letters_spelling" value="Fill in the letters spelling">
+              <label class="form-check-label" for="fill_in_the_letters_spelling">Fill in the letters spelling</label>
+            </div>
+            <!-- Add more checkboxes if needed -->
+          </div>
+        </p>
+        
+          <button type="submit" class="btn btn-primary">Generate Worksheet</button>
+
+
+    </form>
+{% endblock %}
+
