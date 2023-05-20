@@ -21,9 +21,9 @@ class PDF(FPDF):
     def generate_pdf(self, output):
         self.add_page()
         self.chapter_body(output)
-
+        # self.pdf_path = os.path.join(pdf_directory, 'output.pdf')
         self.output('output.pdf')
-
+        # return self.pdf_path
 
 if __name__ == '__main__':
     pdf = PDF()
