@@ -36,22 +36,24 @@ Utilizing the OpenAI API, this application generates a vocabulary worksheet for 
 <img src="https://i.imgur.com/18yQiWN.png">
 
 ## Notes
-Challenges we faced:
-- Git, always Git
-- Flask syntax
-- Connecting the frontend and backend
-- Inputting the ChatGPT response into a .pdf and allowing the file to download locally to the user’s computer
-- Working out deployment bugs 
-Lessons Learned:
-- Keep track of all required packages in a requirements.txt file 
-- Be very specific in prompting ChatGPT
-- We gained a more solid understanding of how to use git
-- Beginning to understand server and routing functionality
-Future Improvements:
-- Develop forms for various subjects
-- Move from Bootstrap to Tailwind CSS to give more control
-- Using DALL-E, or other image generation, to incorporate matching vocab words to AI generated images
-- Output document in a more readily editable file
+- Challenges we faced:
+    - Git, always Git
+    - Flask syntax
+    - Connecting the frontend and backend
+    - Inputting the ChatGPT response into a .pdf and allowing the file to download locally to the user’s computer
+    - Working out deployment bugs 
+
+- Lessons Learned:
+    - Keep track of all required packages in a requirements.txt file 
+    - Be very specific in prompting ChatGPT
+    - We gained a more solid understanding of how to use git
+    - Beginning to understand server and routing functionality
+
+- Future Improvements:
+    - Develop forms for various subjects
+    - Move from Bootstrap to Tailwind CSS to give more control
+    - Using DALL-E, or other image generation, to incorporate matching vocab words to AI generated images
+    - Output document in a more readily editable file
 
 
 
