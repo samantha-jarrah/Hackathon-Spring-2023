@@ -32,5 +32,8 @@ Utilizing the OpenAI API, this application generates a vocabulary worksheet for 
 
 ## Demo
 <a href="https://gifyu.com/image/SnoHd"><img src="https://s11.gifyu.com/images/Animation0729372aacccb0a3.gif" alt="Animation0729372aacccb0a3.gif" border="0" /></a>
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/Q0JG1yO" data-context="false" ><a href="//imgur.com/a/Q0JG1yO"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 ## Notes
 Lessons learned, etc
