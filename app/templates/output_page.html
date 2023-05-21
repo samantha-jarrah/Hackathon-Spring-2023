@@ -15,12 +15,36 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container text-center">
       <h1>Success!</h1>
-      <p>Your vocabulary worksheet has been downloaded to your computer.</p>
-      <a class="btn btn-primary" href="/getform" role="button"
-        >Generate another worksheet</a
+      <p>
+        Here is your custom vocabulary worksheet. Review the content and
+        download it if you wish. Try generating another worksheet if you are
+        unhappy with the results.
+      </p>
+      <div class="text-center pb-3">
+        <a href="{{ url_for('download_pdf') }}" download
+          >Click here to download your PDF</a
+        >
+      </div>
+      <object
+        data="{{ url_for('download_pdf') }}"
+        type="application/pdf"
+        width="100%"
+        height="600px"
       >
+        <p>
+          It appears you don't have a PDF plugin for this browser. You can
+          <a href="{{ url_for('download_pdf') }}"
+            >click here to download the PDF file.</a
+          >
+        </p>
+      </object>
+      <div class="text-center pt-3">
+        <a class="btn btn-primary" href="/getform" role="button"
+          >Generate another worksheet</a
+        >
+      </div>
     </div>
   </body>
 </html>

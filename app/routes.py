@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, request, send_from_directory
+from flask import render_template, flash, redirect, request, send_from_directory, url_for
 from app import app
 from app.forms import AppForm
 from app.pdf_generator import PDF
@@ -35,7 +35,7 @@ def getform():
             temperature=0.8,
             max_tokens=2000,
             messages=[
-                {"role": "user", "content": f"Write English Language exercises for students in the {grade_level} with {english_ability} English ability. It should include exercises in the following formats: {question_types}. The vocab list is: {vocabulary}. Please include a word bank of the vocabulary words before each set of questions. Also, please randomize the order that the vocabulary answers appear in the activity and only include one set of questions per question format type."},
+                {"role": "user", "content": f"Write English Language exercises for students in the {grade_level} with {english_ability} English ability. It should include exercises in the following formats: {question_types}. The vocab list is: {vocabulary}. Please include a word bank of the vocabulary words before each set of questions. Also, please randomize the order that the vocabulary answers appear in the activity and only include one set of questions per question format type. Do not include an answer key or reveal any answers."},
                 {"role": "system", "content": "You are an English Language teacher that creates engaging English Language exercises for your students."}
             ]
         )
@@ -49,8 +49,17 @@ def getform():
 
         pdf_path = os.path.join(pdf_directory, 'output.pdf')
         pdf.output(pdf_path)
-        return send_from_directory(directory=pdf_directory,
-                                   path='output.pdf', as_attachment=True)
-        # return render_template('output_page.html', title='Output Page')
+        return redirect(url_for('output_page'))  # redirect to the output page
 
     return render_template('getform.html', title='Get Form', form=form)
+
+
+@app.route('/output')
+def output_page():
+    return render_template('output_page.html', title='Output Page')
+
+
+@app.route('/download_pdf')
+def download_pdf():
+    pdf_directory = os.path.join(app.root_path, 'pdfs')
+    return send_from_directory(directory=pdf_directory, path='output.pdf', as_attachment=False)
