@@ -2,7 +2,7 @@
 Cameron Chafin, Samantha Jarrah, Claudia Sitiriche, Emily Craven
 
 ## Summary
-Utilizing the OpenAI API, this application generates a vocabulary worksheet based on user input.
+Utilizing the OpenAI API, this application generates a vocabulary worksheet for ESL/English teachers based on user input.
 
 ## Application Features
 - An index page, which explains the function of the application to the user and provides a button for the form page
@@ -13,11 +13,11 @@ Utilizing the OpenAI API, this application generates a vocabulary worksheet base
     - question type 
        - fill in the blank
        - definition matching
+       - multiple choice
        - synonym
        - antonym
-       - fill in the letters spelling
-- once the form is submitted, a call is made to the OpenAI API to generate a random worksheet is a visually pleasing format
-- the form is then available for download
+- Once the form is submitted, a call is made to the OpenAI API to generate a random worksheet in a visually pleasing format
+- The user is routed to a download page where they may preview the generated .pdf and download if they wish
 
 ## Technologies Used
 - Backend
@@ -27,9 +27,10 @@ Utilizing the OpenAI API, this application generates a vocabulary worksheet base
 - Frontend
     - Bootstrap
     - HTML
-    - Heroku (deployment)
+- Deployment
+    - Heroku
 
 ## Demo
-
+<a href="https://gifyu.com/image/SnoHd"><img src="https://s11.gifyu.com/images/Animation0729372aacccb0a3.gif" alt="Animation0729372aacccb0a3.gif" border="0" /></a>
 ## Notes
 Lessons learned, etc
